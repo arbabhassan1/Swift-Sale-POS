@@ -32,7 +32,7 @@ function Home() {
         </div>
       </Online>
       <Offline>
-        <div className="w-full h-screen flex items-center justify-center gap-4 flex-col">
+        <div className="w-full h-screen bg-slate-900 text-[#eee] flex items-center justify-center gap-4 flex-col">
           <img src={offlineIMG} alt="Offline" className="sm:w-[30%] w-[50%]" />
           <h1 className="font-bold text-3xl">No Connection</h1>
           <h1 className="text-center font-semibold ">

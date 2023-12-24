@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect ,useState } from "react";
 import auth from "../fireDb";
 import { onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import Loader from "../Pages/Loader";
 
 function ProtectedRoute(props) {
+  const [isLoading, SetIsLoading] = useState(false);
+
   useEffect(() => {
 
     
@@ -11,7 +14,13 @@ function ProtectedRoute(props) {
       if (user) {
         
       } else {
-        navigate('/')
+        SetIsLoading(true);
+        setTimeout(() => {
+
+          SetIsLoading(false);
+          navigate('/')
+        }, 1000);
+       
       }
     });
   });
@@ -28,6 +37,9 @@ function ProtectedRoute(props) {
   return (
     <div>
       <Component />
+      <div id="loader" style={{ display: isLoading ? "block" : "none" }}>
+            <Loader />
+          </div>
     </div>
   );
 }

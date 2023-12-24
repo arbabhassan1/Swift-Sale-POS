@@ -28,6 +28,8 @@ function Index() {
             navigate('/home');
             SetIsLoading(false);
           }, 3000);
+
+        
          
         })
         .catch((error) => {
@@ -40,7 +42,7 @@ function Index() {
     }
   };
 
-  // Internet Connection
+  
 
   return (
     <div className="bg-slate-900 text-[#eee] min-h-screen w-full h-full flex items-center justify-center ">
